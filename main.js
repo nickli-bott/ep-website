@@ -30,14 +30,51 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// 作品卡片点击（预留，可链接到视频）
-document.querySelectorAll('.work-card').forEach(card => {
-    card.addEventListener('click', () => {
-        // 这里可以添加视频播放逻辑
-        // 例如：打开模态框播放视频，或跳转到详情页
-        console.log('打开作品详情');
+// 视频弹窗
+const videoModal = document.getElementById('videoModal');
+const videoFrame = document.getElementById('videoFrame');
+const modalClose = document.querySelector('.modal-close');
+const modalOverlay = document.querySelector('.modal-overlay');
+
+// 打开弹窗
+function openVideo(bvid) {
+    videoFrame.src = `https://player.bilibili.com/player.html?bvid=${bvid}&autoplay=0&page=1`;
+    videoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// 关闭弹窗
+function closeVideo() {
+    videoModal.classList.remove('active');
+    videoFrame.src = '';
+    document.body.style.overflow = '';
+}
+
+// 作品卡片点击 - 有 data-video 的打开弹窗，其他的跳转B站
+if (videoModal) {
+    document.querySelectorAll('.work-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const bvid = card.dataset.video;
+            if (bvid) {
+                openVideo(bvid);
+            } else {
+                // 其他作品暂时跳转到B站首页
+                window.open('https://www.bilibili.com', '_blank');
+            }
+        });
     });
-});
+
+    // 关闭事件
+    modalClose.addEventListener('click', closeVideo);
+    modalOverlay.addEventListener('click', closeVideo);
+
+    // ESC键关闭
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+            closeVideo();
+        }
+    });
+}
 
 // 淡入动画
 const observerOptions = {
