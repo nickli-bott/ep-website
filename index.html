@@ -33,7 +33,7 @@
         <h2>精选作品</h2>
         <div class="works-grid">
             <!-- 作品1 -->
-            <a href="https://www.bilibili.com/video/BV1acdbB6EEH/" target="_blank" class="work-card">
+            <div class="work-card" data-video="BV1acdbB6EEH">
                 <div class="work-thumbnail">
                     <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80" alt="作品封面">
                     <div class="play-btn">▶</div>
@@ -42,7 +42,7 @@
                     <h3>品牌概念片</h3>
                     <p>时尚 / 2分钟</p>
                 </div>
-            </a>
+            </div>
 
             <!-- 作品2 -->
             <div class="work-card">
@@ -134,6 +134,17 @@
     <footer class="footer">
         <p>&copy; 2026 EP Studio. All rights reserved.</p>
     </footer>
+
+    <!-- 视频弹窗 -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="video-wrapper">
+                <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
