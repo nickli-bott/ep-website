@@ -261,15 +261,11 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: color 0.3s;
-    padding: 12px 24px;
-    border: 1px solid #333;
-    border-radius: 8px;
+    cursor: pointer;
 }
 
 .contact-address:hover {
     color: var(--text);
-    border-color: var(--text);
-    background: rgba(255,255,255,0.03);
 }
 
 .contact-links {
