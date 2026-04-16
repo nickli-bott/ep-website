@@ -142,7 +142,34 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: transform 0.5s, opacity 0.3s;
+}
+
+.work-card:hover .work-thumbnail img {
+    transform: scale(1.05);
+    opacity: 0;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.work-card:hover .video-container {
+    opacity: 1;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .work-card:hover .work-thumbnail img {
@@ -268,80 +295,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* 视频弹窗 */
-.video-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-.video-modal.active {
-    display: flex;
-}
-
-.modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.9);
-    cursor: pointer;
-}
-
-.modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 960px;
-    z-index: 1001;
-}
-
-.modal-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-
-.modal-close:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.5);
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 /* 响应式 */
 @media (max-width: 768px) {
     .nav {
@@ -363,10 +316,5 @@ body {
     
     .about, .contact {
         padding: 80px 20px;
-    }
-
-    .modal-close {
-        top: -50px;
-        right: 10px;
     }
 }
