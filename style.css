@@ -257,7 +257,7 @@ body {
 .contact-address {
     font-size: 18px;
     color: var(--text-secondary);
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     text-decoration: none;
     display: inline-block;
     transition: color 0.3s;
