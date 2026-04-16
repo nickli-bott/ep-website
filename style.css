@@ -38,15 +38,6 @@ body {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -0.5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo-img {
-    height: 28px;
-    width: auto;
-    display: block;
 }
 
 .nav-links {
