@@ -258,6 +258,13 @@ body {
     font-size: 16px;
     color: var(--text-secondary);
     margin-bottom: 40px;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.contact-address:hover {
+    color: var(--text);
 }
 
 .contact-links {
