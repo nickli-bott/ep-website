@@ -242,7 +242,7 @@ body {
 
 /* 联系 */
 .contact {
-    padding: 100px 40px;
+    padding: 150px 40px;
     text-align: center;
 }
 
@@ -251,37 +251,42 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .contact-address {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     text-decoration: none;
     display: inline-block;
     transition: color 0.3s;
+    padding: 12px 24px;
+    border: 1px solid #333;
+    border-radius: 8px;
 }
 
 .contact-address:hover {
     color: var(--text);
+    border-color: var(--text);
+    background: rgba(255,255,255,0.03);
 }
 
 .contact-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     color: var(--text);
     text-decoration: none;
-    font-size: 16px;
-    padding: 15px 30px;
+    font-size: 18px;
+    padding: 18px 40px;
     border: 1px solid #333;
     border-radius: 100px;
     transition: all 0.3s;
